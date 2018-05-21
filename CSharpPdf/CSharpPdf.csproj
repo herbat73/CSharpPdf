@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>CSharpPdf</AssemblyName>
+    <RootNamespace>CSharpPdf</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="font\charData\HPDF_Base14Font_CharData.cs~RF161ceb6f.TMP" />
+  </ItemGroup>
+
+</Project>

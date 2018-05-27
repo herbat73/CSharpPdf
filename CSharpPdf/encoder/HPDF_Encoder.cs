@@ -1,8 +1,8 @@
-﻿using CSharpPdf.types;
-using CSharpPdf.types.enums;
+﻿using CSharpPdf.Types;
+using CSharpPdf.Types.Enums;
 using System.Diagnostics;
 
-namespace CSharpPdf.encoder
+namespace CSharpPdf.Encoder
 {
     public class HPDF_Encoder
     {

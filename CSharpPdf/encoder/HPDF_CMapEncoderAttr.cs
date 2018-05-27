@@ -1,9 +1,9 @@
-﻿using CSharpPdf.objects;
+﻿using CSharpPdf.Objects;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace CSharpPdf.encoder
+namespace CSharpPdf.Encoder
 {
     public class HPDF_CMapEncoderAttr
     {

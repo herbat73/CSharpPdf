@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharpPdf.error
+namespace CSharpPdf.Error
 {
     public class HPDF_Error : Exception
     {

@@ -1,4 +1,4 @@
-﻿namespace CSharpPdf.encoder
+﻿namespace CSharpPdf.Encoder
 {
     public class HPDF_CidRange_Rec
     {

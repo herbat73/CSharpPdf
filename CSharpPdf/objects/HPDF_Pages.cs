@@ -1,9 +1,9 @@
-﻿using CSharpPdf.dict;
-using CSharpPdf.error;
-using CSharpPdf.xref;
+﻿using CSharpPdf.Dict;
+using CSharpPdf.Error;
+using CSharpPdf.Xref;
 using System.Diagnostics;
 
-namespace CSharpPdf.objects
+namespace CSharpPdf.Objects
 {
     public class HPDF_Pages : HPDF_Dict
     {

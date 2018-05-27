@@ -1,9 +1,9 @@
-﻿using CSharpPdf.objects;
-using CSharpPdf.page;
-using CSharpPdf.xref;
+﻿using CSharpPdf.Objects;
+using CSharpPdf.Page;
+using CSharpPdf.Xref;
 using System.Diagnostics;
 
-namespace CSharpPdf.types
+namespace CSharpPdf.Types
 {
     public class HPDF_Destination : HPDF_Array
     {

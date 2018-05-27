@@ -1,7 +1,7 @@
-﻿using CSharpPdf.types;
+﻿using CSharpPdf.Types;
 using System.Diagnostics;
 
-namespace CSharpPdf.font
+namespace CSharpPdf.Font
 {
     public class HPDF_FontAttrTTF : HPDF_FontAttr
     {

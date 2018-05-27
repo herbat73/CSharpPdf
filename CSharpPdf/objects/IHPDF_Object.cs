@@ -1,4 +1,4 @@
-﻿namespace CSharpPdf.objects
+﻿namespace CSharpPdf.Objects
 {
     public interface IHPDF_Object
     {

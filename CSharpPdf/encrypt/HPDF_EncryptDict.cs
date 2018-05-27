@@ -1,8 +1,8 @@
-﻿using CSharpPdf.dict;
-using CSharpPdf.xref;
+﻿using CSharpPdf.Dict;
+using CSharpPdf.Xref;
 using System.Diagnostics;
 
-namespace CSharpPdf.encrypt
+namespace CSharpPdf.Encrypt
 {
     public class HPDF_EncryptDict : HPDF_Dict
     {

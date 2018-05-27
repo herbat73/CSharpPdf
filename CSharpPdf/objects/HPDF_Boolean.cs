@@ -1,4 +1,4 @@
-﻿namespace CSharpPdf.objects
+﻿namespace CSharpPdf.Objects
 {
     public class HPDF_Boolean : HPDF_Object
     {

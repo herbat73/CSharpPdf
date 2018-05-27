@@ -1,11 +1,11 @@
-﻿using CSharpPdf.dict;
-using CSharpPdf.encoder;
-using CSharpPdf.error;
-using CSharpPdf.types;
-using CSharpPdf.xref;
+﻿using CSharpPdf.Dict;
+using CSharpPdf.Encoder;
+using CSharpPdf.Error;
+using CSharpPdf.Types;
+using CSharpPdf.Xref;
 using System.Collections.Generic;
 
-namespace CSharpPdf.font
+namespace CSharpPdf.Font
 {
     public class HPDF_FontAttr
     {

@@ -1,6 +1,6 @@
-﻿using CSharpPdf.xref;
+﻿using CSharpPdf.Xref;
 
-namespace CSharpPdf.dict
+namespace CSharpPdf.Dict
 {
     public class HPDF_DictStream : HPDF_Dict
     {

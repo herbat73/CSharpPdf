@@ -1,11 +1,11 @@
-﻿using CSharpPdf.encoder;
-using CSharpPdf.objects;
-using CSharpPdf.types;
-using CSharpPdf.types.enums;
-using CSharpPdf.xref;
+﻿using CSharpPdf.Encoder;
+using CSharpPdf.Objects;
+using CSharpPdf.Types;
+using CSharpPdf.Types.Enums;
+using CSharpPdf.Xref;
 using System.Diagnostics;
 
-namespace CSharpPdf.dict
+namespace CSharpPdf.Dict
 {
     public class HPDF_Annotation : HPDF_Dict
     {

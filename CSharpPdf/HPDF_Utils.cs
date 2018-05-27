@@ -1,5 +1,5 @@
-﻿using CSharpPdf.error;
-using CSharpPdf.types;
+﻿using CSharpPdf.Error;
+using CSharpPdf.Types;
 using System;
 using System.Text;
 

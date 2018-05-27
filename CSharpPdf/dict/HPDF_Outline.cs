@@ -1,9 +1,9 @@
-﻿using CSharpPdf.encoder;
-using CSharpPdf.types;
-using CSharpPdf.xref;
+﻿using CSharpPdf.Encoder;
+using CSharpPdf.Types;
+using CSharpPdf.Xref;
 using System.Diagnostics;
 
-namespace CSharpPdf.dict
+namespace CSharpPdf.Dict
 {
     public class HPDF_Outline : HPDF_Dict
     {

@@ -1,4 +1,4 @@
-﻿namespace CSharpPdf.types.enums
+﻿namespace CSharpPdf.Types.Enums
 {
     public enum HPDF_TextRenderingMode
     { 

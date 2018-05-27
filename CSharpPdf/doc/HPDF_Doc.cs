@@ -1,21 +1,22 @@
-﻿using CSharpPdf.catalog;
-using CSharpPdf.dict;
-using CSharpPdf.encoder;
-using CSharpPdf.encrypt;
-using CSharpPdf.error;
-using CSharpPdf.font;
-using CSharpPdf.gstate;
-using CSharpPdf.image;
-using CSharpPdf.objects;
-using CSharpPdf.page;
-using CSharpPdf.streams;
-using CSharpPdf.types;
-using CSharpPdf.types.enums;
-using CSharpPdf.xref;
+﻿using CSharpPdf.Catalog;
+using CSharpPdf.Dict;
+using CSharpPdf.Encoder;
+using CSharpPdf.Encrypt;
+using CSharpPdf.Error;
+using CSharpPdf.Font;
+using CSharpPdf.Gstate;
+using CSharpPdf.Image;
+using CSharpPdf.Logger;
+using CSharpPdf.Objects;
+using CSharpPdf.Page;
+using CSharpPdf.Streams;
+using CSharpPdf.Types;
+using CSharpPdf.Types.Enums;
+using CSharpPdf.Xref;
 using System;
 using System.Diagnostics;
 
-namespace CSharpPdf.doc
+namespace CSharpPdf.Doc
 {
     public class HPDF_Doc
     {
@@ -79,7 +80,7 @@ namespace CSharpPdf.doc
 
         public HPDF_Doc(Func<string> userErrorFunc = null, object userData = null)
         {
-            Trace.WriteLine("HPDF_Doc");
+            LibLogger.Debug(this.GetType(), "ctor");
 
             PdfVersion = (int)HPDF_PdfVer.HPDF_VER_13;
             sigBytes = HPDF_SIG_BYTES;
@@ -90,7 +91,7 @@ namespace CSharpPdf.doc
 
         private void HPDF_NewDoc()
         {
-            Trace.WriteLine("HPDF_NewDoc");
+            LibLogger.Debug(this.GetType(), "HPDF_NewDoc");
 
             HPDF_FreeDoc();
             Xref = new HPDF_Xref();

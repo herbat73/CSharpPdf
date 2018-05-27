@@ -1,6 +1,6 @@
-﻿using CSharpPdf.objects;
+﻿using CSharpPdf.Objects;
 
-namespace CSharpPdf.types
+namespace CSharpPdf.Types
 {
     public class HPDF_Real : HPDF_Object
     {

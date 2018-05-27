@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
-using CSharpPdf.encoder;
-using CSharpPdf.error;
-using CSharpPdf.font;
-using CSharpPdf.objects;
-using CSharpPdf.streams;
-using CSharpPdf.types;
+using CSharpPdf.Encoder;
+using CSharpPdf.Error;
+using CSharpPdf.Font;
+using CSharpPdf.Objects;
+using CSharpPdf.Streams;
+using CSharpPdf.Types;
 
-namespace CSharpPdf.dict
+namespace CSharpPdf.Dict
 {
     public class HPDF_Dict : HPDF_Object
     {

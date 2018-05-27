@@ -1,9 +1,9 @@
-﻿using CSharpPdf.font;
-using CSharpPdf.types;
-using CSharpPdf.xref;
+﻿using CSharpPdf.Font;
+using CSharpPdf.Types;
+using CSharpPdf.Xref;
 using System.Diagnostics;
 
-namespace CSharpPdf.gstate
+namespace CSharpPdf.Gstate
 {
     public class HPDF_GState
     {

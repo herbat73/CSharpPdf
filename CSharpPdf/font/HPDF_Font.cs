@@ -1,9 +1,6 @@
-﻿using CSharpPdf.dict;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CSharpPdf.Dict;
 
-namespace CSharpPdf.font
+namespace CSharpPdf.Font
 {
     public class HPDF_Font : HPDF_Dict
     {

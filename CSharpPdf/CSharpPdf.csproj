@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="font\charData\HPDF_Base14Font_CharData.cs~RF161ceb6f.TMP" />
+    <None Remove="Font\CharData\HPDF_Base14Font_CharData.cs~RF161ceb6f.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="4.5.5" />
+    <PackageReference Include="NLog.Config" Version="4.5.5" />
   </ItemGroup>
 
 </Project>

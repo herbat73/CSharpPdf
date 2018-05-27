@@ -1,4 +1,4 @@
-﻿namespace CSharpPdf.types
+﻿namespace CSharpPdf.Types
 {
     public class HPDF_TextWidth
     {

@@ -1,6 +1,6 @@
-﻿using CSharpPdf.error;
+﻿using CSharpPdf.Error;
 
-namespace CSharpPdf.objects
+namespace CSharpPdf.Objects
 {
     public class HPDF_Name : HPDF_Object
     {

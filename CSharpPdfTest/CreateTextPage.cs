@@ -1,5 +1,5 @@
-using CSharpPdf.doc;
-using CSharpPdf.page;
+using CSharpPdf.Doc;
+using CSharpPdf.Page;
 using System;
 using Xunit;
 

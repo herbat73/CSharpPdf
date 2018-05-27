@@ -1,12 +1,12 @@
-﻿using CSharpPdf.dict;
-using CSharpPdf.encoder;
-using CSharpPdf.encrypt;
-using CSharpPdf.error;
-using CSharpPdf.objects;
-using CSharpPdf.types;
+﻿using CSharpPdf.Dict;
+using CSharpPdf.Encoder;
+using CSharpPdf.Encrypt;
+using CSharpPdf.Error;
+using CSharpPdf.Objects;
+using CSharpPdf.Types;
 using System.Diagnostics;
 
-namespace CSharpPdf.streams
+namespace CSharpPdf.Streams
 {
     public class HPDF_Stream
     {

@@ -1,15 +1,15 @@
-﻿using CSharpPdf.dict;
-using CSharpPdf.encrypt;
-using CSharpPdf.font;
-using CSharpPdf.gstate;
-using CSharpPdf.streams;
-using CSharpPdf.types;
-using CSharpPdf.types.enums;
-using CSharpPdf.xref;
+﻿using CSharpPdf.Dict;
+using CSharpPdf.Encrypt;
+using CSharpPdf.Font;
+using CSharpPdf.Gstate;
+using CSharpPdf.Streams;
+using CSharpPdf.Types;
+using CSharpPdf.Types.Enums;
+using CSharpPdf.Xref;
 using System;
 using System.Diagnostics;
 
-namespace CSharpPdf.objects
+namespace CSharpPdf.Objects
 {
     public class HPDF_PageAttr
     {

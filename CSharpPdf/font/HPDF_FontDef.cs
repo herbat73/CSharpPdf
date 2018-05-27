@@ -1,8 +1,8 @@
-﻿using CSharpPdf.dict;
-using CSharpPdf.streams;
-using CSharpPdf.types;
+﻿using CSharpPdf.Dict;
+using CSharpPdf.Streams;
+using CSharpPdf.Types;
 
-namespace CSharpPdf.font
+namespace CSharpPdf.Font
 {
     public class HPDF_FontDef
     {

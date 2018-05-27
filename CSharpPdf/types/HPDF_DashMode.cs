@@ -10,7 +10,7 @@ using System.Text;
 //std::multiset -> SortedDictionary<Tkey, int> (int keeping count of the number of Tkeys)
 //std::unordered_map -> Dictionary<TKey, TValue>
 
-namespace CSharpPdf.types
+namespace CSharpPdf.Types
 {
     public class HPDF_DashMode
     {

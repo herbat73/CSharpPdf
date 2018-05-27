@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace CSharpPdf.encrypt
+namespace CSharpPdf.Encrypt
 {
     public class HPDF_MD5_CTX
     {

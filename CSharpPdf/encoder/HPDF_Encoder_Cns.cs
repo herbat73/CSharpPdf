@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSharpPdf.encoder
+namespace CSharpPdf.Encoder
 {
     public class HPDF_Encoder_Cns
     {

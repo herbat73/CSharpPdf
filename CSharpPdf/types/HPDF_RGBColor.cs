@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharpPdf.types
+namespace CSharpPdf.Types
 {
     public class HPDF_RGBColor
     {

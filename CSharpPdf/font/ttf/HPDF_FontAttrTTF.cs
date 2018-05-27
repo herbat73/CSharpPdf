@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CSharpPdf.font.ttf
+﻿namespace CSharpPdf.Font.Ttf
 {
     public class HPDF_FontAttrTTF : HPDF_FontAttr
     {

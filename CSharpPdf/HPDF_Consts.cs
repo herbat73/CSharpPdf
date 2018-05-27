@@ -1,5 +1,5 @@
-﻿using CSharpPdf.types;
-using CSharpPdf.types.enums;
+﻿using CSharpPdf.Types;
+using CSharpPdf.Types.Enums;
 
 namespace CSharpPdf
 {

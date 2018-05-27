@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace CSharpPdf.encrypt
+namespace CSharpPdf.Encrypt
 {
     public class HPDF_ARC4_Ctx
     {

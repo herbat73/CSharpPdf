@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace CSharpPdf.objects
+namespace CSharpPdf.Objects
 {
     public class HPDF_Binary : HPDF_Object
     {

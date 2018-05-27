@@ -1,7 +1,7 @@
-﻿using CSharpPdf.encoder;
+﻿using CSharpPdf.Encoder;
 using System.Diagnostics;
 
-namespace CSharpPdf.objects
+namespace CSharpPdf.Objects
 {
     public class HPDF_String : HPDF_Object
     {

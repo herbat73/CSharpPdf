@@ -1,9 +1,9 @@
-﻿using CSharpPdf.objects;
+﻿using CSharpPdf.Objects;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSharpPdf.dict
+namespace CSharpPdf.Dict
 {
     public  class HPDF_Null : HPDF_Dict
     {

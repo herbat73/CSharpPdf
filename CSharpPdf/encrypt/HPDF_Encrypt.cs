@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace CSharpPdf.encrypt
+namespace CSharpPdf.Encrypt
 {
     public class HPDF_Encrypt
     {

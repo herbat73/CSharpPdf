@@ -1,11 +1,11 @@
-﻿using CSharpPdf.dict;
-using CSharpPdf.error;
-using CSharpPdf.objects;
-using CSharpPdf.types;
-using CSharpPdf.xref;
+﻿using CSharpPdf.Dict;
+using CSharpPdf.Error;
+using CSharpPdf.Objects;
+using CSharpPdf.Types;
+using CSharpPdf.Xref;
 using System.Diagnostics;
 
-namespace CSharpPdf.catalog
+namespace CSharpPdf.Catalog
 {
     public class HPDF_Catalog : HPDF_Dict
     {

@@ -1,4 +1,4 @@
-﻿namespace CSharpPdf.font.charData
+﻿namespace CSharpPdf.Font.CharData
 {
     public class CharData
     {

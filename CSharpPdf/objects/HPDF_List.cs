@@ -1,8 +1,8 @@
-﻿using CSharpPdf.error;
+﻿using CSharpPdf.Error;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace CSharpPdf.objects
+namespace CSharpPdf.Objects
 {
     public class HPDF_List
     {

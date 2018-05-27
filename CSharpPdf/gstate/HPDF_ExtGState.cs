@@ -1,8 +1,8 @@
-﻿using CSharpPdf.dict;
-using CSharpPdf.xref;
+﻿using CSharpPdf.Dict;
+using CSharpPdf.Xref;
 using System.Diagnostics;
 
-namespace CSharpPdf.gstate
+namespace CSharpPdf.Gstate
 {
     public class HPDF_ExtGState : HPDF_Dict
     {

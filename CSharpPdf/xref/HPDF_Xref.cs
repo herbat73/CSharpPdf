@@ -1,12 +1,12 @@
-﻿using CSharpPdf.dict;
-using CSharpPdf.encrypt;
-using CSharpPdf.error;
-using CSharpPdf.objects;
-using CSharpPdf.streams;
+﻿using CSharpPdf.Dict;
+using CSharpPdf.Encrypt;
+using CSharpPdf.Error;
+using CSharpPdf.Objects;
+using CSharpPdf.Streams;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace CSharpPdf.xref
+namespace CSharpPdf.Xref
 {
     public class HPDF_Xref
     {

@@ -1,7 +1,7 @@
-﻿using CSharpPdf.streams;
+﻿using CSharpPdf.Streams;
 using System.Diagnostics;
 
-namespace CSharpPdf.encoder
+namespace CSharpPdf.Encoder
 {
     public class HPDF_BasicEncoder : HPDF_Encoder
     {

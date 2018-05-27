@@ -1,10 +1,10 @@
-﻿using CSharpPdf.streams;
+﻿using CSharpPdf.Streams;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace CSharpPdf.encoder
+namespace CSharpPdf.Encoder
 {
     public class HPDF_CMapEncoder : HPDF_Encoder
     {

@@ -1,5 +1,5 @@
 ﻿using CSharpPdf.Types;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Font
 {
@@ -7,7 +7,7 @@ namespace CSharpPdf.Font
     {
         public override HPDF_TextWidth textWidthFn(HPDF_Font font, string text, uint len)
         {
-            Trace.WriteLine("HPDF_TTFont_TextWidth");
+            LibLogger.Debug(this.GetType(), "HPDF_TTFont_TextWidth");
 
             var ret = new HPDF_TextWidth(0, 0, 0, 0);
             ///uint b = 0;
@@ -41,7 +41,7 @@ namespace CSharpPdf.Font
 
         private int CharWidth(HPDF_Font font, int code)
 		{
-            Trace.WriteLine("CharWidth");
+            LibLogger.Debug(this.GetType(), "CharWidth");
 
             //if ( this.used[code] == 0 )
             //         {
@@ -59,7 +59,7 @@ namespace CSharpPdf.Font
         public override double measureTextFn(HPDF_Font font, string text, uint len,
                                     double width, double fontSize, double charSpace, double wordSpace, bool wordwrap, C_NumberPointer realWidth)
         {
-            Trace.WriteLine("HPDF_TTFont_MeasureText");
+            LibLogger.Debug(this.GetType(), "HPDF_TTFont_MeasureText");
             return 0;
 
             //double w = 0;

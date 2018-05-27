@@ -1,7 +1,7 @@
 ﻿using CSharpPdf.Objects;
 using CSharpPdf.Page;
 using CSharpPdf.Xref;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Types
 {
@@ -19,23 +19,23 @@ namespace CSharpPdf.Types
 
         public HPDF_Destination(HPDF_Page target, HPDF_Xref xref)
         {
-            Trace.WriteLine("HPDF_Destination");
+            LibLogger.Debug(this.GetType(), "HPDF_Destination");
         }
 
         public void HPDF_Destination_SetXYZ(double left, double top, double zoom)
         {
-            Trace.WriteLine("HPDF_Destination_SetXYZ");
+            LibLogger.Debug(this.GetType(), "HPDF_Destination_SetXYZ");
         }
 
         public bool HPDF_Destination_Validate()
         {
-            Trace.WriteLine("HPDF_Destination_Validate");
+            LibLogger.Debug(this.GetType(), "HPDF_Destination_Validate");
             return true;
         }
 
         public void HPDF_Destination_SetFit()
         {
-            Trace.WriteLine("HPDF_Destination_SetFit");
+            LibLogger.Debug(this.GetType(), "HPDF_Destination_SetFit");
         }
     }
 }

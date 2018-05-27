@@ -4,7 +4,7 @@ using CSharpPdf.Encrypt;
 using CSharpPdf.Error;
 using CSharpPdf.Objects;
 using CSharpPdf.Types;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Streams
 {
@@ -28,18 +28,18 @@ namespace CSharpPdf.Streams
 
         public void HPDF_Stream_WriteStr(string value)
         {
-            Trace.WriteLine("HPDF_Stream_WriteStr");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_WriteStr");
         }
 
         public int HPDF_Stream_WriteStrUTF(string value)
         {
-            Trace.WriteLine("HPDF_Stream_WriteStrUTF");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_WriteStrUTF");
             return 0;
         }
 
         public void HPDF_Obj_WriteValue(HPDF_Object obj, HPDF_Encrypt e)
 		{
-            Trace.WriteLine("HPDF_Obj_WriteValue");
+            LibLogger.Debug(this.GetType(), "HPDF_Obj_WriteValue");
 
             HPDF_Obj_Header header = obj.Header;
 		
@@ -83,24 +83,24 @@ namespace CSharpPdf.Streams
 
         private void HPDF_Name_Write(HPDF_Name obj)
 		{
-            Trace.WriteLine("HPDF_Name_Write");
+            LibLogger.Debug(this.GetType(), "HPDF_Name_Write");
             HPDF_Stream_WriteEscapeName(obj.Value);
         }
 
         private void HPDF_Stream_WriteEscapeName(string value)
         {
-            Trace.WriteLine("HPDF_Stream_WriteEscapeName");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_WriteEscapeName");
         }
 
         private void HPDF_Number_Write(HPDF_Number obj)
         {
-            Trace.WriteLine("HPDF_Number_Write");
+            LibLogger.Debug(this.GetType(), "HPDF_Number_Write");
             HPDF_Stream_WriteInt(obj.Value);
         }
 
         private void HPDF_Stream_WriteInt(int value)
         {
-            Trace.WriteLine("HPDF_Stream_WriteInt");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_WriteInt");
             HPDF_Stream_WriteStr(value.ToString());
         }
 
@@ -111,135 +111,135 @@ namespace CSharpPdf.Streams
 
         private void HPDF_Stream_WriteReal(double value)
         {
-            Trace.WriteLine("HPDF_Stream_WriteReal");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_WriteReal");
         }
 
         private void HPDF_String_Write(HPDF_String obj, HPDF_Encrypt e)
         {
-            Trace.WriteLine("HPDF_String_Write");
+            LibLogger.Debug(this.GetType(), "HPDF_String_Write");
         }
 
         private void HPDF_Binary_Write(HPDF_Binary obj, HPDF_Encrypt e)
         {
-            Trace.WriteLine("HPDF_Binary_Write");
+            LibLogger.Debug(this.GetType(), "HPDF_Binary_Write");
         }
 
         public void HPDF_Stream_WriteBinaryString(string str, HPDF_Encrypt e)
         {
-            Trace.WriteLine("HPDF_Stream_WriteBinaryString");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_WriteBinaryString");
         }
 
         public void HPDF_Stream_WriteBinary(byte[] data, HPDF_Encrypt e, bool toHex = true)
         {
-            Trace.WriteLine("HPDF_Stream_WriteBinary");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_WriteBinary");
         }
 
         public void HPDF_Stream_Write(byte[] data)
         {
-            Trace.WriteLine("HPDF_Stream_Write");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_Write");
         }
 
         public void HPDF_Stream_WriteEscapeText(string str, HPDF_Encoder e)
         {
-            Trace.WriteLine("HPDF_Stream_WriteEscapeText");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_WriteEscapeText");
         }
 
         public void HPDF_Stream_WriteEscapeText2(string str, HPDF_Encoder e, uint len)
         {
-            Trace.WriteLine("HPDF_Stream_WriteEscapeText2");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_WriteEscapeText2");
         }
 
         public void HPDF_Array_Write(HPDF_Array arr, HPDF_Encrypt e)
         {
-            Trace.WriteLine("HPDF_Array_Write");
+            LibLogger.Debug(this.GetType(), "HPDF_Array_Write");
         }
 
         private void HPDF_Obj_Write(HPDF_Object obj, HPDF_Encrypt e)
         {
-            Trace.WriteLine("HPDF_Obj_Write");
+            LibLogger.Debug(this.GetType(), "HPDF_Obj_Write");
         }
 
         public void HPDF_Dict_Write(HPDF_Dict obj, HPDF_Encrypt e)
         {
-            Trace.WriteLine("HPDF_Dict_Write");
+            LibLogger.Debug(this.GetType(), "HPDF_Dict_Write");
         }
 
         private void HPDF_Boolean_Write(HPDF_Boolean obj)
         {
-            Trace.WriteLine("HPDF_Boolean_Write");
+            LibLogger.Debug(this.GetType(), "HPDF_Boolean_Write");
         }
 
         public void HPDF_Stream_WriteToStream(HPDF_Stream stream, uint filter, HPDF_Encrypt e)
         {
-            Trace.WriteLine("HPDF_Stream_WriteToStream");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_WriteToStream");
         }
 
         public byte[] HPDF_Stream_Read(uint len)
         {
-            Trace.WriteLine("HPDF_Stream_Read");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_Read");
             return null;
         }
 
         public void HPDF_Stream_Seek(int pos, int mode)
         {
-            Trace.WriteLine("HPDF_Stream_Seek");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_Seek");
         }
 
         private void HPDF_Stream_Free()
         {
-            Trace.WriteLine("HPDF_Stream_Free");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_Free");
         }
 
         public void HPDF_Stream_WriteUInt(uint value)
         {
-            Trace.WriteLine("HPDF_Stream_WriteUInt");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_WriteUInt");
         }
 
         public void HPDF2_Stream_Read_UInt4()
         {
-            Trace.WriteLine("HPDF2_Stream_Read_UInt4");
+            LibLogger.Debug(this.GetType(), "HPDF2_Stream_Read_UInt4");
         }
 
         public uint HPDF2_Stream_Read_UInt2()
         {
-            Trace.WriteLine("HPDF2_Stream_Read_UInt2");
+            LibLogger.Debug(this.GetType(), "HPDF2_Stream_Read_UInt2");
             return 0;
         }
 
         public void WriteUINT16(uint value)
         {
-            Trace.WriteLine("WriteUINT32");
+            LibLogger.Debug(this.GetType(), "WriteUINT32");
         }
 
         public void WriteUINT32(uint value)
         {
-            Trace.WriteLine("WriteUINT32");
+            LibLogger.Debug(this.GetType(), "WriteUINT32");
         }
 
         public void WriteINT16(int value)
         {
-            Trace.WriteLine("WriteINT16");
+            LibLogger.Debug(this.GetType(), "WriteINT16");
         }
 
         public void WriteINT32(int value)
         {
-            Trace.WriteLine("WriteINT32");
+            LibLogger.Debug(this.GetType(), "WriteINT32");
         }
 
         public void HPDF_MemStream_Rewrite(byte[] buf, int size)
         {
-            Trace.WriteLine("HPDF_MemStream_Rewrite");
+            LibLogger.Debug(this.GetType(), "HPDF_MemStream_Rewrite");
         }
 
         // https://www.codeproject.com/Tips/830793/Net-ZLib-Implementation
         //private void CheckError(ZStream z, int err, string msg)
         //{
-        //    Trace.WriteLine("HPDF_Stream_Free");
+        //    LibLogger.Debug(this.GetType(), "HPDF_Stream_Free");
         //}
 
         private bool HPDF_Stream_Validate()
         {
-            Trace.WriteLine("HPDF_Stream_Validate");
+            LibLogger.Debug(this.GetType(), "HPDF_Stream_Validate");
             return true;
         }
 

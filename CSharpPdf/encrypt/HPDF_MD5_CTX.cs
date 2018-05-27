@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 using System.Text;
 
 namespace CSharpPdf.Encrypt
@@ -14,7 +14,7 @@ namespace CSharpPdf.Encrypt
 
         public void HPDF_MD5Init()
         {
-            Trace.WriteLine("HPDF_MD5Init");
+            LibLogger.Debug(this.GetType(), "HPDF_MD5Init");
 
             buf[0] = 0x67452301;
             buf[1] = 0xefcdab89;

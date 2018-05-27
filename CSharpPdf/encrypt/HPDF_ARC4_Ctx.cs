@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Encrypt
 {
@@ -13,12 +13,12 @@ namespace CSharpPdf.Encrypt
 
         public HPDF_ARC4_Ctx()
         {
-            Trace.WriteLine("HPDF_ARC4_Ctx");
+            LibLogger.Debug(this.GetType(), "HPDF_ARC4_Ctx");
         }
 
         public void ARC4CryptBuf(byte[] inbytes, byte[] output, uint len)
         {
-            Trace.WriteLine("ARC4CryptBuf");
+            LibLogger.Debug(this.GetType(), "ARC4CryptBuf");
         }
 
     }

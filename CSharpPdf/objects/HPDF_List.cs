@@ -1,6 +1,6 @@
 ﻿using CSharpPdf.Error;
 using System.Collections.Generic;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Objects
 {
@@ -26,7 +26,7 @@ namespace CSharpPdf.Objects
             HPDF_Object lastItem	= Obj[Obj.Count - 1]; 
 			int i;
 
-            Trace.WriteLine(" HPDF_List_Insert");
+            LibLogger.Debug(this.GetType(), " HPDF_List_Insert");
 			
 			if (targetIdx < 0)
 				throw new HPDF_Error("HPDF_List_Insert", HPDF_Error.HPDF_ITEM_NOT_FOUND, 0);
@@ -43,7 +43,7 @@ namespace CSharpPdf.Objects
         public int HPDF_List_Find(object item)
 		{
 						
-			Trace.WriteLine(" HPDF_List_Find");
+			LibLogger.Debug(this.GetType(), " HPDF_List_Find");
 			
 			for (int i= 0; i< Obj.Count; i++) {
 				if (Obj[i] == item)

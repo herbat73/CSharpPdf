@@ -3,7 +3,8 @@ using CSharpPdf.Objects;
 using CSharpPdf.Types;
 using CSharpPdf.Types.Enums;
 using CSharpPdf.Xref;
-using System.Diagnostics;
+using CSharpPdf.Logger;
+using System.Reflection;
 
 namespace CSharpPdf.Dict
 {
@@ -37,18 +38,18 @@ namespace CSharpPdf.Dict
         // TODO: body
         public HPDF_Annotation(HPDF_Xref xref, uint type, HPDF_Rect rect)
         {
-            Trace.WriteLine("HPDF_Annotation");
+            LibLogger.Debug(this.GetType(), "HPDF_Annotation");
         }
 
         // TODO: body
         public void HPDF_Annotation_SetBorderStyle(uint subtype, double width, uint dash_on, uint dash_off, uint dash_phase)
         {
-            Trace.WriteLine("HPDF_Annotation_SetBorderStyle");
+            LibLogger.Debug(this.GetType(), "HPDF_Annotation_SetBorderStyle");
         }
 
         public static HPDF_Annotation HPDF_LinkAnnot_New(HPDF_Xref xref, HPDF_Rect rect, HPDF_Destination dest)
         {
-            Trace.WriteLine("HPDF_LinkAnnot_New");
+            LibLogger.Debug(MethodBase.GetCurrentMethod().DeclaringType, "HPDF_LinkAnnot_New");
 
             HPDF_Annotation annot = new HPDF_Annotation(xref, (uint)HPDF_AnnotType.HPDF_ANNOT_LINK, rect);
             annot.HPDF_Dict_Add("Dest", dest);
@@ -58,7 +59,7 @@ namespace CSharpPdf.Dict
 
         public HPDF_Annotation HPDF_URILinkAnnot_New(HPDF_Xref xref, HPDF_Rect rect, string uri)
         {
-            Trace.WriteLine("HPDF_URILinkAnnot_New");
+            LibLogger.Debug(this.GetType(), "HPDF_URILinkAnnot_New");
 
             HPDF_Annotation annot;
             HPDF_Dict action;
@@ -80,37 +81,37 @@ namespace CSharpPdf.Dict
         // TODO: body
         public void HPDF_LinkAnnot_SetBorderStyle()
         {
-            Trace.WriteLine("HPDF_LinkAnnot_SetBorderStyle");
+            LibLogger.Debug(this.GetType(), "HPDF_LinkAnnot_SetBorderStyle");
         }
 
         // TODO: body
         public void HPDF_LinkAnnot_SetHighlightMode(uint mode)
         {
-            Trace.WriteLine("HPDF_LinkAnnot_SetHighlightMode");
+            LibLogger.Debug(this.GetType(), "HPDF_LinkAnnot_SetHighlightMode");
         }
 
         // TODO: body
         public void HPDF_TextAnnot_New(HPDF_Xref xref, HPDF_Rect rect, string text, HPDF_Encoder enecoder)
         {
-            Trace.WriteLine("HPDF_TextAnnot_New");
+            LibLogger.Debug(this.GetType(), "HPDF_TextAnnot_New");
         }
 
         // TODO: body
         public void HPDF_TextAnnot_SetIcon(HPDF_Annotation annot, uint icon)
         {
-            Trace.WriteLine("HPDF_LinkAnnot_SetHighlightMode");
+            LibLogger.Debug(this.GetType(), "HPDF_LinkAnnot_SetHighlightMode");
         }
 
         // TODO: body
         public void HPDF_TextAnnot_SetOpened(HPDF_Annotation annot, HPDF_Boolean opened)
         {
-            Trace.WriteLine("HPDF_LinkAnnot_SetHighlightMode");
+            LibLogger.Debug(this.GetType(), "HPDF_LinkAnnot_SetHighlightMode");
         }
 
         // TODO: body
         public bool HPDF_Annotation_Validate()
         {
-            Trace.WriteLine("HPDF_LinkAnnot_SetHighlightMode");
+            LibLogger.Debug(this.GetType(), "HPDF_LinkAnnot_SetHighlightMode");
             
             return true;
         }
@@ -118,7 +119,7 @@ namespace CSharpPdf.Dict
         // TODO: body
         public bool CheckSubType(uint type)
         {
-            Trace.WriteLine("CheckSubType");
+            LibLogger.Debug(this.GetType(), "CheckSubType");
 
             return true;
         }

@@ -4,7 +4,7 @@ using CSharpPdf.Error;
 using CSharpPdf.Objects;
 using CSharpPdf.Streams;
 using System.Collections.Generic;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Xref
 {
@@ -22,7 +22,7 @@ namespace CSharpPdf.Xref
 
         public HPDF_Xref(int offset = 0)
         {
-            Trace.WriteLine(" HPDF_Xref_New\n");
+            LibLogger.Debug(this.GetType(), " HPDF_Xref_New\n");
 
             HPDF_Xref_Entry newEntry;    
     
@@ -49,7 +49,7 @@ namespace CSharpPdf.Xref
 
         public double HPDF_Xref_Free()
         {
-            Trace.WriteLine("HPDF_Xref_Free");
+            LibLogger.Debug(this.GetType(), "HPDF_Xref_Free");
 
             HPDF_Xref lxref = this;
             while (lxref != null)
@@ -89,7 +89,7 @@ namespace CSharpPdf.Xref
 
         public void HPDF_Xref_Add(HPDF_Object obj)
         {
-            Trace.WriteLine("HPDF_Xref_Add");
+            LibLogger.Debug(this.GetType(), "HPDF_Xref_Add");
 
             if (obj==null)
             {
@@ -130,7 +130,7 @@ namespace CSharpPdf.Xref
 
         public HPDF_Xref_Entry HPDF_Xref_GetEntryByObjectId(uint objId)
         {
-            Trace.WriteLine("HPDF_Xref_GetEntryByObjectId");
+            LibLogger.Debug(this.GetType(), "HPDF_Xref_GetEntryByObjectId");
 
             HPDF_Xref tmpXref = this;
 
@@ -163,7 +163,7 @@ namespace CSharpPdf.Xref
 
         private void WriteTrailer(HPDF_Stream stream)  
 	    {
-            Trace.WriteLine(" WriteTrailer");
+            LibLogger.Debug(this.GetType(), " WriteTrailer");
             int maxObjId =	(int)Entries.Count + StartOffset;
  
             Trailer.HPDF_Dict_AddNumber("Size", maxObjId) ;

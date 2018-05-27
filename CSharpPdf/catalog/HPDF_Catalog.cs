@@ -1,9 +1,9 @@
 ﻿using CSharpPdf.Dict;
 using CSharpPdf.Error;
+using CSharpPdf.Logger;
 using CSharpPdf.Objects;
 using CSharpPdf.Types;
 using CSharpPdf.Xref;
-using System.Diagnostics;
 
 namespace CSharpPdf.Catalog
 {
@@ -13,7 +13,7 @@ namespace CSharpPdf.Catalog
 
         public HPDF_Catalog(HPDF_Xref xref)
         {
-            Trace.WriteLine("HPDF_Catalog");
+            LibLogger.Debug(this.GetType(), "HPDF_Catalog");
 
             Header.ObjClass |= HPDF_Obj_Header.HPDF_OSUBCLASS_CATALOG;
 

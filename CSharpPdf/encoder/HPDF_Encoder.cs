@@ -1,6 +1,7 @@
 ﻿using CSharpPdf.Types;
 using CSharpPdf.Types.Enums;
-using System.Diagnostics;
+using CSharpPdf.Logger;
+using System.Reflection;
 
 namespace CSharpPdf.Encoder
 {
@@ -91,7 +92,7 @@ namespace CSharpPdf.Encoder
 		 {
 			uint i = 0;
 
-            Trace.WriteLine(" HPDF_BasicEncoder_FindBuiltinData");
+            LibLogger.Debug(MethodBase.GetCurrentMethod().DeclaringType, " HPDF_BasicEncoder_FindBuiltinData");
 			
 			while (HPDF_BUILTIN_ENCODINGS[i].EncodingName!=null)
 			{
@@ -110,7 +111,7 @@ namespace CSharpPdf.Encoder
 
         public virtual uint HPDF_Encoder_ToUnicode(uint code)
         {
-            Trace.WriteLine(" HPDF_Encoder_ToUnicode");
+            LibLogger.Debug(this.GetType(), " HPDF_Encoder_ToUnicode");
             return 0;
         }
 

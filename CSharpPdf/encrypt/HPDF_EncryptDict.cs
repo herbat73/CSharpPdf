@@ -1,6 +1,6 @@
 ﻿using CSharpPdf.Dict;
 using CSharpPdf.Xref;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Encrypt
 {
@@ -8,33 +8,33 @@ namespace CSharpPdf.Encrypt
     {
         public HPDF_EncryptDict(HPDF_Xref xref)
         {
-            Trace.WriteLine("HPDF_EncryptDict");
+            LibLogger.Debug(this.GetType(), "HPDF_EncryptDict");
         }
 
         public void HPDF_EncryptDict_CreateID(HPDF_Dict info, HPDF_Xref xref)
         {
-            Trace.WriteLine("HPDF_EncryptDict_CreateID");
+            LibLogger.Debug(this.GetType(), "HPDF_EncryptDict_CreateID");
         }
 
         public void freeFn()
         {
-            Trace.WriteLine("freeFn");
+            LibLogger.Debug(this.GetType(), "freeFn");
         }
 
         public void HPDF_EncryptDict_SetPassword(string ownerPass, string userPass)
         {
-            Trace.WriteLine("HPDF_EncryptDict_SetPassword");
+            LibLogger.Debug(this.GetType(), "HPDF_EncryptDict_SetPassword");
         }
 
         public bool HPDF_EncryptDict_Validate()
         {
-            Trace.WriteLine("HPDF_EncryptDict_Validate");
+            LibLogger.Debug(this.GetType(), "HPDF_EncryptDict_Validate");
             return true;
         }
 
         public HPDF_Encrypt HPDF_EncryptDict_GetAttr()
         {
-            Trace.WriteLine("HPDF_EncryptDict_GetAttr");
+            LibLogger.Debug(this.GetType(), "HPDF_EncryptDict_GetAttr");
             return null;
         }
     }   

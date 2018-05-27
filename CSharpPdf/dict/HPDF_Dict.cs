@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 using CSharpPdf.Encoder;
 using CSharpPdf.Error;
 using CSharpPdf.Font;
@@ -55,7 +55,7 @@ namespace CSharpPdf.Dict
 
             if (List.Count >= HPDF_Consts.HPDF_LIMIT_MAX_DICT_ELEMENT)
             {
-                Trace.WriteLine(" HPDF_Dict_Add exceed limitatin of dict count(" + HPDF_Consts.HPDF_LIMIT_MAX_DICT_ELEMENT.ToString() + ")");
+                LibLogger.Debug(this.GetType(), " HPDF_Dict_Add exceed limitatin of dict count(" + HPDF_Consts.HPDF_LIMIT_MAX_DICT_ELEMENT.ToString() + ")");
                 throw new HPDF_Error("HPDF_Dict_Add line - invalid object", HPDF_Error.HPDF_DICT_COUNT_ERR, 0);
             }
 
@@ -125,7 +125,7 @@ namespace CSharpPdf.Dict
 
                 if ((Header.ObjClass & HPDF_Obj_Header.HPDF_OCLASS_ANY) != objClass)
                 {
-                    Trace.WriteLine(" HPDF_Dict_GetItem dict=%p key=%s obj_class=0x%08X\n");
+                    LibLogger.Debug(this.GetType(), " HPDF_Dict_GetItem dict=%p key=%s obj_class=0x%08X\n");
                     throw new HPDF_Error("HPDF_Dict_GetItem", HPDF_Error.HPDF_DICT_ITEM_UNEXPECTED_TYPE, 0);
                 }
             }

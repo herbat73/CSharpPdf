@@ -1,5 +1,5 @@
 ﻿using CSharpPdf.Encoder;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Objects
 {
@@ -10,7 +10,7 @@ namespace CSharpPdf.Objects
 
         public HPDF_String(string value ="", HPDF_Encoder encoder = null)
         {
-            Trace.WriteLine("HPDF_String");
+            LibLogger.Debug(this.GetType(), "HPDF_String");
 
             Value = value;
             Encoder = encoder;
@@ -24,7 +24,7 @@ namespace CSharpPdf.Objects
 
         public HPDF_String FromByteArray(byte[] ba)
         {
-            Trace.WriteLine("FromByteArray");
+            LibLogger.Debug(this.GetType(), "FromByteArray");
 
             HPDF_String ret = new HPDF_String("");
             return ret;

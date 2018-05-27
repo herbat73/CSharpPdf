@@ -14,7 +14,6 @@ using CSharpPdf.Types;
 using CSharpPdf.Types.Enums;
 using CSharpPdf.Xref;
 using System;
-using System.Diagnostics;
 
 namespace CSharpPdf.Doc
 {
@@ -124,7 +123,7 @@ namespace CSharpPdf.Doc
 
         public void HPDF_FreeDoc()
         {
-            Trace.WriteLine("HPDF_FreeDoc");
+            LibLogger.Debug(this.GetType(), "HPDF_FreeDoc");
 
             if (Xref!=null)
             {
@@ -137,114 +136,114 @@ namespace CSharpPdf.Doc
 
         public void HPDF_SetPagesConfiguration()
         {
-            Trace.WriteLine("HPDF_SetPagesConfiguration");
+            LibLogger.Debug(this.GetType(), "HPDF_SetPagesConfiguration");
         }
 
         public void WriteHeader(HPDF_Stream stream)
         {
-            Trace.WriteLine("WriteHeader");
+            LibLogger.Debug(this.GetType(), "WriteHeader");
         }
 
         public void PrepareTrailer()
         {
-            Trace.WriteLine("PrepareTrailer");
+            LibLogger.Debug(this.GetType(), "PrepareTrailer");
         }
 
         public void HPDF_Doc_SetEncryptOn()
         {
-            Trace.WriteLine("HPDF_Doc_SetEncryptOn");
+            LibLogger.Debug(this.GetType(), "HPDF_Doc_SetEncryptOn");
         }
 
         public void HPDF_SetPassword(string ownerPass, string userPass)
         {
-            Trace.WriteLine("HPDF_SetPassword");
+            LibLogger.Debug(this.GetType(), "HPDF_SetPassword");
         }
 
         public void HPDF_SetPermission(uint permission)
         {
-            Trace.WriteLine("HPDF_SetPermission");
+            LibLogger.Debug(this.GetType(), "HPDF_SetPermission");
         }
 
         public void HPDF_SetEncryptionMode(uint mode, uint keyLen)
         {
-            Trace.WriteLine("HPDF_SetEncryptionMode");
+            LibLogger.Debug(this.GetType(), "HPDF_SetEncryptionMode");
         }
 
         public void HPDF_Doc_SetEncryptOff()
         {
-            Trace.WriteLine("HPDF_Doc_SetEncryptOff");
+            LibLogger.Debug(this.GetType(), "HPDF_Doc_SetEncryptOff");
         }
 
         public void HPDF_Doc_PrepareEncryption()
         {
-            Trace.WriteLine("HPDF_Doc_PrepareEncryption");
+            LibLogger.Debug(this.GetType(), "HPDF_Doc_PrepareEncryption");
         }
 
         public void InternalSaveToStream(HPDF_Stream stream)
         {
-            Trace.WriteLine("InternalSaveToStream");
+            LibLogger.Debug(this.GetType(), "InternalSaveToStream");
         }
 
         public void HPDF_SaveToStream()
         {
-            Trace.WriteLine("HPDF_SaveToStream");
+            LibLogger.Debug(this.GetType(), "HPDF_SaveToStream");
         }
 
         public uint HPDF_GetStreamSize()
         {
-            Trace.WriteLine("HPDF_GetStreamSize");
+            LibLogger.Debug(this.GetType(), "HPDF_GetStreamSize");
             return 0;
         }
 
         public HPDF_Page HPDF_GetCurrentPage()
         {
-            Trace.WriteLine("HPDF_GetCurrentPage");
+            LibLogger.Debug(this.GetType(), "HPDF_GetCurrentPage");
             return null;
         }
 
         public HPDF_Page HPDF_GetPageByIndex(uint index)
         {
-            Trace.WriteLine("HPDF_GetPageByIndex");
+            LibLogger.Debug(this.GetType(), "HPDF_GetPageByIndex");
             return null;
         }
 
         public HPDF_Pages HPDF_Doc_GetCurrentPages()
         {
-            Trace.WriteLine("HPDF_Doc_GetCurrentPages");
+            LibLogger.Debug(this.GetType(), "HPDF_Doc_GetCurrentPages");
             return null;
         }
 
         public void HPDF_Doc_SetCurrentPages()
         {
-            Trace.WriteLine("HPDF_Doc_SetCurrentPages");
+            LibLogger.Debug(this.GetType(), "HPDF_Doc_SetCurrentPages");
         }
 
         public void HPDF_Doc_SetCurrentPage(HPDF_Page page)
         {
-            Trace.WriteLine("HPDF_Doc_SetCurrentPage");
+            LibLogger.Debug(this.GetType(), "HPDF_Doc_SetCurrentPage");
         }
 
         public HPDF_Page HPDF_AddPage()
         {
-            Trace.WriteLine("HPDF_AddPage");
+            LibLogger.Debug(this.GetType(), "HPDF_AddPage");
             return null;
         }
 
         public HPDF_Pages HPDF_Doc_AddPagesTo(HPDF_Pages pages)
         {
-            Trace.WriteLine("HPDF_AddPage");
+            LibLogger.Debug(this.GetType(), "HPDF_AddPage");
             return null;
         }
 
         public bool HPDF_HasDoc()
         {
-            Trace.WriteLine("HPDF_HasDoc");
+            LibLogger.Debug(this.GetType(), "HPDF_HasDoc");
             return true;
         }
 
         public HPDF_Page HPDF_InsertPage(HPDF_Page taget)
         {
-            Trace.WriteLine("HPDF_InsertPage");
+            LibLogger.Debug(this.GetType(), "HPDF_InsertPage");
             return null;
         }
 
@@ -254,29 +253,29 @@ namespace CSharpPdf.Doc
 
         public void FreeFontDefList()
         {
-            Trace.WriteLine("FreeFontDefList");
+            LibLogger.Debug(this.GetType(), "FreeFontDefList");
         }
 
         public void CleanupFontDefList()
         {
-            Trace.WriteLine("CleanupFontDefList");
+            LibLogger.Debug(this.GetType(), "CleanupFontDefList");
         }
 
         public HPDF_FontDef HPDF_Doc_FindFontDef(string fontName)
         {
-            Trace.WriteLine("HPDF_InsertPage");
+            LibLogger.Debug(this.GetType(), "HPDF_InsertPage");
             return null;
         }
 
         public HPDF_FontDef HPDF_Doc_RegisterFontDef(HPDF_FontDef fontdef)
         {
-            Trace.WriteLine("HPDF_Doc_RegisterFontDef");
+            LibLogger.Debug(this.GetType(), "HPDF_Doc_RegisterFontDef");
             return null;
         }
 
         public HPDF_FontDef HPDF_GetFontDef(string fontName)
         {
-            Trace.WriteLine("HPDF_GetFontDef");
+            LibLogger.Debug(this.GetType(), "HPDF_GetFontDef");
             return null;
         }
 
@@ -286,35 +285,35 @@ namespace CSharpPdf.Doc
 
         public HPDF_Encoder HPDF_Doc_FindEncoder(string encodingName)
         {
-            Trace.WriteLine("HPDF_Doc_FindEncoder");
+            LibLogger.Debug(this.GetType(), "HPDF_Doc_FindEncoder");
             return null;
         }
 
         public void HPDF_Doc_RegisterEncoder(HPDF_Encoder encoder)
         {
-            Trace.WriteLine("HPDF_Doc_RegisterEncoder");
+            LibLogger.Debug(this.GetType(), "HPDF_Doc_RegisterEncoder");
         }
 
         public HPDF_Encoder HPDF_GetEncoder(string encodingName)
         {
-            Trace.WriteLine("HPDF_GetEncoder");
+            LibLogger.Debug(this.GetType(), "HPDF_GetEncoder");
             return null;
         }
 
         public HPDF_Encoder HPDF_GetCurrentEncoder()
         {
-            Trace.WriteLine("HPDF_GetCurrentEncoder");
+            LibLogger.Debug(this.GetType(), "HPDF_GetCurrentEncoder");
             return null;
         }
 
         public void HPDF_SetCurrentEncoder(string encodingName)
         {
-            Trace.WriteLine("HPDF_SetCurrentEncoder");
+            LibLogger.Debug(this.GetType(), "HPDF_SetCurrentEncoder");
         }
 
         public void FreeEncoderList()
         {
-            Trace.WriteLine("FreeEncoderList");
+            LibLogger.Debug(this.GetType(), "FreeEncoderList");
         }
 
         ///**************************************************************************
@@ -323,79 +322,79 @@ namespace CSharpPdf.Doc
 
         public string HPDF_GetVersion()
         {
-            Trace.WriteLine("HPDF_GetVersion");
+            LibLogger.Debug(this.GetType(), "HPDF_GetVersion");
             return HPDF_VERSION_TEXT;
         }
 
         public void HPDF_SetInfoAttr(int type, string value)
         {
-            Trace.WriteLine("HPDF_SetInfoAttr");
+            LibLogger.Debug(this.GetType(), "HPDF_SetInfoAttr");
         }
 
         public HPDF_Dict GetInfo()
         {
-            Trace.WriteLine("GetInfo");
+            LibLogger.Debug(this.GetType(), "GetInfo");
             return null;
         }
 
         public HPDF_Font HPDF_GetFont(string fontName, string encodingName)
         {
-            Trace.WriteLine("HPDF_GetFont");
+            LibLogger.Debug(this.GetType(), "HPDF_GetFont");
             return null;
         }
 
         public HPDF_Font HPDF_Doc_FindFont(string fontName, string encodingName)
         {
-            Trace.WriteLine("HPDF_Doc_FindFont");
+            LibLogger.Debug(this.GetType(), "HPDF_Doc_FindFont");
             return null;
         }
 
         public string HPDF_LoadTTFontFromStream(byte[] fontData, bool embedding)
         {
-            Trace.WriteLine("HPDF_LoadTTFontFromStream");
+            LibLogger.Debug(this.GetType(), "HPDF_LoadTTFontFromStream");
             return "";
         }
         public string HPDF_LoadType1FontFromStream(byte[] fontData, bool embedding)
         {
-            Trace.WriteLine("HPDF_LoadTTFontFromStream");
+            LibLogger.Debug(this.GetType(), "HPDF_LoadTTFontFromStream");
             return "";
         }
 
         public void HPDF_SetPageMode()
         {
-            Trace.WriteLine("HPDF_SetPageMode");
+            LibLogger.Debug(this.GetType(), "HPDF_SetPageMode");
         }
 
         public void HPDF_SetCompressionMode(uint mode)
         {
-            Trace.WriteLine("HPDF_SetCompressionMode");
+            LibLogger.Debug(this.GetType(), "HPDF_SetCompressionMode");
         }
 
         public HPDF_PngImage HPDF_LoadPngImageFromByteArray(byte[] source)
         {
-            Trace.WriteLine("HPDF_LoadPngImageFromByteArray");
+            LibLogger.Debug(this.GetType(), "HPDF_LoadPngImageFromByteArray");
             return null;
         }
 
         public HPDF_ExtGState HPDF_CreateExtGState()
         {
-            Trace.WriteLine("HPDF_CreateExtGState");
+            LibLogger.Debug(this.GetType(), "HPDF_CreateExtGState");
             return null;
         }
 
         public void HPDF_UseCNSEncodings()
         {
-            Trace.WriteLine("HPDF_UseCNSEncodings");
+            LibLogger.Debug(this.GetType(), "HPDF_UseCNSEncodings");
         }
 
         public void HPDF_UseCNSFonts()
         {
-            Trace.WriteLine("HPDF_UseCNSFonts");
+            LibLogger.Debug(this.GetType(), "HPDF_UseCNSFonts");
         }
 
         public void HPDF_SetOpenAction(HPDF_Destination openAction)
         {
-            Trace.WriteLine("HPDF_SetOpenAction");
+            LibLogger.Debug(this.GetType(), "HPDF_SetOpenAction");
         }
 
     }

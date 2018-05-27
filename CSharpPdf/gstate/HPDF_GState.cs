@@ -1,7 +1,7 @@
 ﻿using CSharpPdf.Font;
 using CSharpPdf.Types;
 using CSharpPdf.Xref;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Gstate
 {
@@ -40,7 +40,7 @@ namespace CSharpPdf.Gstate
 
         public HPDF_GState(HPDF_Xref xref)
         {
-            Trace.WriteLine("HPDF_GState");
+            LibLogger.Debug(this.GetType(), "HPDF_GState");
         }
     }
 }

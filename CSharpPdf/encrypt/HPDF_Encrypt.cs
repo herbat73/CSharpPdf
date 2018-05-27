@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Diagnostics;
+using System.Reflection;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Encrypt
 {
@@ -34,71 +35,71 @@ namespace CSharpPdf.Encrypt
 
         public HPDF_Encrypt()
         {
-            Trace.WriteLine("HPDF_Encrypt");
+            LibLogger.Debug(this.GetType(), "HPDF_Encrypt");
         }
 
         public void HPDF_Encrypt_Init()
         {
-            Trace.WriteLine("HPDF_Encrypt_Init");
+            LibLogger.Debug(this.GetType(), "HPDF_Encrypt_Init");
         }
 
         public void HPDF_MD5Update(HPDF_MD5_CTX ctx, byte[] buf, uint len)
         {
-            Trace.WriteLine("HPDF_Encrypt_Init");
+            LibLogger.Debug(this.GetType(), "HPDF_Encrypt_Init");
         }
 
         public void HPDF_MD5Final(byte[] digest, HPDF_MD5_CTX ctx)
         {
-            Trace.WriteLine("HPDF_MD5Final");
+            LibLogger.Debug(this.GetType(), "HPDF_MD5Final");
         }
 
         public void HPDF_Encrypt_InitKey(uint objectId, uint genNo)
         {
-            Trace.WriteLine("HPDF_Encrypt_InitKey");
+            LibLogger.Debug(this.GetType(), "HPDF_Encrypt_InitKey");
         }
 
         public void ARC4Init(HPDF_ARC4_Ctx ctx, byte[] key, uint keyLen)
         {
-            Trace.WriteLine("ARC4Init");
+            LibLogger.Debug(this.GetType(), "ARC4Init");
         }
 
         public void HPDF_Encrypt_Reset()
         {
-            Trace.WriteLine("HPDF_Encrypt_Init");
+            LibLogger.Debug(this.GetType(), "HPDF_Encrypt_Init");
         }
 
         private void MD5ByteReverse(byte[] vec, uint longs)
         {
-            Trace.WriteLine("MD5ByteReverse");
+            LibLogger.Debug(this.GetType(), "MD5ByteReverse");
         }
 
         private static uint F1(uint x, uint y, uint z)
         {
-            Trace.WriteLine("F1");
+            LibLogger.Debug(MethodBase.GetCurrentMethod().DeclaringType, "F1");
             return z ^ (x & (y ^ z));
         }
 
         private static uint F2(uint x, uint y, uint z)
         {
-            Trace.WriteLine("F2");
+            LibLogger.Debug(MethodBase.GetCurrentMethod().DeclaringType, "F2");
             return F1(z, x, y);
         }
 
         private static uint F3(uint x, uint y, uint z)
         {
-            Trace.WriteLine("F3");
+            LibLogger.Debug(MethodBase.GetCurrentMethod().DeclaringType, "F3");
             return (x ^ y ^ z);
         }
 
         private static uint F4(uint x, uint y, uint z)
         {
-            Trace.WriteLine("F4");
+            LibLogger.Debug(MethodBase.GetCurrentMethod().DeclaringType, "F4");
             return (y ^ (x | ~z));
         }
 
         private uint HPDF_MD5STEP(Func<uint, uint, uint, uint> f, uint w, uint x, uint y, uint z, uint data, uint s)
         {
-            Trace.WriteLine("HPDF_MD5STEP");
+            LibLogger.Debug(this.GetType(), "HPDF_MD5STEP");
 
             uint ff = f(x, y, z);
             uint ret = w + ff + data;
@@ -109,32 +110,32 @@ namespace CSharpPdf.Encrypt
 
         private void MD5Transform()
         {
-            Trace.WriteLine("MD5Transform");
+            LibLogger.Debug(this.GetType(), "MD5Transform");
         }
 
         private void HPDF_Encrypt_CreateOwnerKey()
         {
-            Trace.WriteLine("HPDF_Encrypt_CreateOwnerKey");
+            LibLogger.Debug(this.GetType(), "HPDF_Encrypt_CreateOwnerKey");
         }
 
         private void HPDF_Encrypt_CreateEncryptionKey()
         {
-            Trace.WriteLine("HPDF_Encrypt_CreateOwnerKey");
+            LibLogger.Debug(this.GetType(), "HPDF_Encrypt_CreateOwnerKey");
         }
 
         private void HPDF_Encrypt_CreateUserKey()
         {
-            Trace.WriteLine("HPDF_Encrypt_CreateOwnerKey");
+            LibLogger.Debug(this.GetType(), "HPDF_Encrypt_CreateOwnerKey");
         }
 
         private void HPDF_Encrypt_CryptBuf()
         {
-            Trace.WriteLine("HPDF_Encrypt_CryptBuf");
+            LibLogger.Debug(this.GetType(), "HPDF_Encrypt_CryptBuf");
         }
 
         private void HPDF_PadOrTrancatePasswd()
         {
-            Trace.WriteLine("HPDF_PadOrTrancatePasswd");
+            LibLogger.Debug(this.GetType(), "HPDF_PadOrTrancatePasswd");
         }
 
     }

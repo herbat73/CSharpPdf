@@ -1,5 +1,5 @@
 ﻿using CSharpPdf.Streams;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Encoder
 {
@@ -7,44 +7,44 @@ namespace CSharpPdf.Encoder
     {
         public HPDF_BasicEncoder(string encodingName)
         {
-            Trace.WriteLine("HPDF_BasicEncoder");
+            LibLogger.Debug(this.GetType(), "HPDF_BasicEncoder");
         }
 
         public HPDF_BasicEncoderAttr BasicEncoderAttr()
         {
-            Trace.WriteLine("HPDF_Doc");
+            LibLogger.Debug(this.GetType(), "HPDF_Doc");
             return null;
         }
 
         public uint UnicodeToByte(uint value)
         {
-            Trace.WriteLine("unicodeToByte");
+            LibLogger.Debug(this.GetType(), "unicodeToByte");
             return value;
         }
 
         public void WriteFn(HPDF_Stream stream)
         {
-            Trace.WriteLine("WriteFn");
+            LibLogger.Debug(this.GetType(), "WriteFn");
         }
 
         public void ReadFn()
         {
-            Trace.WriteLine("ReadFn");
+            LibLogger.Debug(this.GetType(), "ReadFn");
         }
 
         public void HPDF_BasicEncoder_CopyMap(uint[] map)
         {
-            Trace.WriteLine("HPDF_BasicEncoder_CopyMap");
+            LibLogger.Debug(this.GetType(), "HPDF_BasicEncoder_CopyMap");
         }
 
         public void HPDF_BasicEncoder_OverrideMap(uint[] map)
         {
-            Trace.WriteLine("HPDF_BasicEncoder_OverrideMap");
+            LibLogger.Debug(this.GetType(), "HPDF_BasicEncoder_OverrideMap");
         }
 
         public override uint HPDF_Encoder_ToUnicode(uint code)
         {
-            Trace.WriteLine("HPDF_Encoder_ToUnicode");
+            LibLogger.Debug(this.GetType(), "HPDF_Encoder_ToUnicode");
             return code;
         }
     }

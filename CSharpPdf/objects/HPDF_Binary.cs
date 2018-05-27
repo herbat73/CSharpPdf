@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿using CSharpPdf.Logger;
 
 namespace CSharpPdf.Objects
 {
@@ -10,7 +10,7 @@ namespace CSharpPdf.Objects
 
         public HPDF_Binary(byte[] value)
         {
-            Trace.WriteLine("HPDF_Binary");
+            LibLogger.Debug(this.GetType(), "HPDF_Binary");
 
             Value = value;
             Header.ObjClass = HPDF_Obj_Header.HPDF_OCLASS_BINARY;

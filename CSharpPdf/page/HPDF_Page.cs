@@ -1,6 +1,6 @@
 ﻿using CSharpPdf.Dict;
 using CSharpPdf.Xref;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Page
 {
@@ -8,7 +8,7 @@ namespace CSharpPdf.Page
     {
         public HPDF_Page(HPDF_Xref xref)
         {
-            Trace.WriteLine("HPDF_Page");
+            LibLogger.Debug(this.GetType(), "HPDF_Page");
         }
 
     }

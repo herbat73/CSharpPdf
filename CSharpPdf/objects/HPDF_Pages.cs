@@ -1,7 +1,7 @@
 ﻿using CSharpPdf.Dict;
 using CSharpPdf.Error;
 using CSharpPdf.Xref;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Objects
 {
@@ -9,7 +9,7 @@ namespace CSharpPdf.Objects
     {
         public HPDF_Pages(HPDF_Pages parent, HPDF_Xref xref )
         {
-            Trace.WriteLine("HPDF_Pages");
+            LibLogger.Debug(this.GetType(), "HPDF_Pages");
 
             Header.ObjClass |= HPDF_Obj_Header.HPDF_OSUBCLASS_PAGES;
 
@@ -26,7 +26,7 @@ namespace CSharpPdf.Objects
         
         public void HPDF_Pages_AddKids(HPDF_Dict kid)
         {
-            Trace.WriteLine("HPDF_Pages_AddKids");
+            LibLogger.Debug(this.GetType(), "HPDF_Pages_AddKids");
 
             HPDF_Array kids;
             HPDF_PageAttr pageAttr;

@@ -7,7 +7,7 @@ using CSharpPdf.Types;
 using CSharpPdf.Types.Enums;
 using CSharpPdf.Xref;
 using System;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Objects
 {
@@ -34,7 +34,7 @@ namespace CSharpPdf.Objects
 
         public void InternalWriteText(string text)
         {
-            Trace.WriteLine("InternalWriteText");
+            LibLogger.Debug(this.GetType(), "InternalWriteText");
 
             var fontAttr = gstate.font.Attr;
 

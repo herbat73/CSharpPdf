@@ -1,7 +1,7 @@
 ﻿using CSharpPdf.Encoder;
 using CSharpPdf.Types;
 using CSharpPdf.Xref;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Dict
 {
@@ -13,73 +13,73 @@ namespace CSharpPdf.Dict
         // TODO body
         public HPDF_Outline(bool root = false, HPDF_Outline parent = null, string title = "", HPDF_Encoder encoder = null, HPDF_Xref xref = null)
         {
-            Trace.WriteLine("HPDF_Outline");
+            LibLogger.Debug(this.GetType(), "HPDF_Outline");
         }
 
         // TODO body
         public void beforeWriteFn()
         {
-            Trace.WriteLine("beforeWriteFn");
+            LibLogger.Debug(this.GetType(), "beforeWriteFn");
         }
 
         // TODO body
         private uint CountChild()
         {
-            Trace.WriteLine("CountChild");
+            LibLogger.Debug(this.GetType(), "CountChild");
             return 0;
         }
 
         // TODO body
         public HPDF_Outline HPDF_Outline_GetNext()
         {
-            Trace.WriteLine("HPDF_Outline_GetNext");
+            LibLogger.Debug(this.GetType(), "HPDF_Outline_GetNext");
             return null;
         }
 
         // TODO body
         public HPDF_Outline HPDF_Outline_GetFirst()
         {
-            Trace.WriteLine("HPDF_Outline_GetFirst");
+            LibLogger.Debug(this.GetType(), "HPDF_Outline_GetFirst");
             return null;
         }
 
         // TODO body
         public HPDF_Outline HPDF_Outline_GetLast()
         {
-            Trace.WriteLine("HPDF_Outline_GetLast");
+            LibLogger.Debug(this.GetType(), "HPDF_Outline_GetLast");
             return null;
         }
 
         // TODO body
         public HPDF_Outline HPDF_Outline_GetOpened()
         {
-            Trace.WriteLine("HPDF_Outline_GetOpened");
+            LibLogger.Debug(this.GetType(), "HPDF_Outline_GetOpened");
             return null;
         }
 
         // TODO body
         public void AddChild(HPDF_Outline item)
         {
-            Trace.WriteLine("AddChild");
+            LibLogger.Debug(this.GetType(), "AddChild");
         }
 
         // TODO body
         public bool HPDF_Outline_Validate()
         {
-            Trace.WriteLine("HPDF_Outline_Validate");
+            LibLogger.Debug(this.GetType(), "HPDF_Outline_Validate");
             return true;
         }
 
         // TODO body
         public void HPDF_Outline_SetDestination(HPDF_Destination dest)
         {
-            Trace.WriteLine("HPDF_Outline_SetDestination");
+            LibLogger.Debug(this.GetType(), "HPDF_Outline_SetDestination");
         }
 
         // TODO body
         public void HPDF_Outline_SetOpened(bool opened)
         {
-            Trace.WriteLine("HPDF_Outline_SetOpened");
+            LibLogger.Debug(this.GetType(), "HPDF_Outline_SetOpened");
         }
 
     }

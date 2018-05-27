@@ -1,7 +1,7 @@
 ﻿using CSharpPdf.Objects;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using CSharpPdf.Logger;
 
 namespace CSharpPdf.Encoder
 {
@@ -24,7 +24,7 @@ namespace CSharpPdf.Encoder
 
         public HPDF_CMapEncoderAttr()
         {
-            Trace.WriteLine("HPDF_CMapEncoderAttr");
+            LibLogger.Debug(this.GetType(), "HPDF_CMapEncoderAttr");
         }
     }
 }

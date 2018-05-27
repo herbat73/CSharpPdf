@@ -129,6 +129,12 @@ namespace CSharpPdf.error
 
         public object UserData;
 
+        public HPDF_Error()
+        {
+            ErrorNo = 0;
+            DetailNo = 0;
+        }
+
         public HPDF_Error(string message = "", int id = 0, int detailNo = 0) : base("Processing error.", new Exception(message))
         {
             ErrorNo = id;

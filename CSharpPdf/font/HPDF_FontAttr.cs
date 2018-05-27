@@ -22,6 +22,10 @@ namespace CSharpPdf.font
     	public HPDF_Dict mapStream;
         public HPDF_Dict cmapStream;
 
+        public HPDF_FontAttr()
+        {
+        }
+
         public virtual HPDF_TextWidth textWidthFn(HPDF_Font font, string text, uint len)
         {
             throw new HPDF_Error("Function textWidthFn  not implemented by HPDF_FontAttr !");

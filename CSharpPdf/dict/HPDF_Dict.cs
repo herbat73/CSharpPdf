@@ -12,7 +12,7 @@ namespace CSharpPdf.dict
     public class HPDF_Dict : HPDF_Object
     {
         public List<HPDF_DictElement> List;	
-    	public double Filter; 
+    	public int Filter; 
     	public HPDF_Error Error;  
     	public HPDF_FontAttr Attr; 	
     	public HPDF_Stream Stream;
@@ -26,7 +26,6 @@ namespace CSharpPdf.dict
                 ObjClass = HPDF_Obj_Header.HPDF_OCLASS_DICT
             };
 
-            //obj->list = HPDF_List_New (mmgr, HPDF_DEF_ITEMS_PER_BLOCK);
             List = new List<HPDF_DictElement>();
             Filter = HPDF_Stream.HPDF_STREAM_FILTER_NONE;
             Error = new HPDF_Error();
@@ -50,7 +49,6 @@ namespace CSharpPdf.dict
 
             if ((header.ObjId & HPDF_Obj_Header.HPDF_OTYPE_DIRECT) != 0)
                 throw new HPDF_Error("HPDF_Dict_Add line - invalid object", HPDF_Error.HPDF_INVALID_OBJECT, 0);
-
 
             if (key == null)
                 throw new HPDF_Error("HPDF_Dict_Add line - invalid object", HPDF_Error.HPDF_INVALID_OBJECT, 0);

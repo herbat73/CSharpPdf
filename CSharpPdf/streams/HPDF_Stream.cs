@@ -21,6 +21,11 @@ namespace CSharpPdf.streams
 
         public object attr;
 
+        public HPDF_Stream()
+        {
+                
+        }
+
         public void HPDF_Stream_WriteStr(string value)
         {
             Trace.WriteLine("HPDF_Stream_WriteStr");

@@ -20,11 +20,11 @@ namespace CSharpPdf.xref
       	public HPDF_Xref Prev; 
       	public HPDF_Dict Trailer;
 
-        public HPDF_Xref(int offset)
+        public HPDF_Xref(int offset = 0)
         {
             Trace.WriteLine(" HPDF_Xref_New\n");
 
-            var newEntry = new HPDF_Xref_Entry();    
+            HPDF_Xref_Entry newEntry;    
     
             StartOffset = offset;
             Entries = new List<HPDF_Xref_Entry>();
@@ -32,17 +32,15 @@ namespace CSharpPdf.xref
 
             if (StartOffset == 0)
             {
-                newEntry = new HPDF_Xref_Entry();
+                newEntry = new HPDF_Xref_Entry
+                {
+                    EntryTyp = HPDF_FREE_ENTRY,
+                    ByteOffset = 0,
+                    GenNo = HPDF_Consts.HPDF_MAX_GENERATION_NUM,
+                    Obj = null
+                };
 
                 Entries.Add(newEntry);
-
-                /* add first entry which is free entry and whose generation
-		         * number is 0
-		         */
-                newEntry.EntryTyp = HPDF_FREE_ENTRY;
-                newEntry.ByteOffset = 0;
-                newEntry.GenNo = HPDF_Consts.HPDF_MAX_GENERATION_NUM;
-                newEntry.Obj = null;
             }
 
             Trailer = new HPDF_Dict();
@@ -111,14 +109,15 @@ namespace CSharpPdf.xref
                 throw new HPDF_Error("HPDF_Xref_Add", HPDF_Error.HPDF_XREF_COUNT_ERR, 0);
             }
 
-            var entry = new HPDF_Xref_Entry();
+            var entry = new HPDF_Xref_Entry
+            {
+                EntryTyp = HPDF_IN_USE_ENTRY,
+                ByteOffset = 0,
+                GenNo = 0,
+                Obj = obj
+            };
 
             Entries.Add(entry);
-
-            entry.EntryTyp = HPDF_IN_USE_ENTRY;
-            entry.ByteOffset = 0;
-            entry.GenNo = 0;
-            entry.Obj = obj;
 
             header.ObjId = (uint)(StartOffset + Entries.Count - 1 + (int)HPDF_Obj_Header.HPDF_OTYPE_INDIRECT);
             header.GenNo = entry.GenNo;
@@ -186,7 +185,5 @@ namespace CSharpPdf.xref
 	        stream.HPDF_Stream_WriteStr(HPDF_Utils.ParseString("\\012%%EOF\\012"));
 		
 	    }
-
-
     }
 }

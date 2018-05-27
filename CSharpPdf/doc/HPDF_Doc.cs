@@ -10,6 +10,7 @@ using CSharpPdf.objects;
 using CSharpPdf.page;
 using CSharpPdf.streams;
 using CSharpPdf.types;
+using CSharpPdf.types.enums;
 using CSharpPdf.xref;
 using System;
 using System.Diagnostics;
@@ -37,59 +38,100 @@ namespace CSharpPdf.doc
         ///private delegate _userErrorFunc(); // user error handler function
         ///
 
-       // private double sigBytes; 
-		public int pdfVersion; 
+        private readonly int sigBytes; 
+		public int PdfVersion; 
 		
-		public double compressionMode; 
+		public double CompressionMode; 
 		
-		public HPDF_Error error;
+		public HPDF_Error Error;
 		
-		public HPDF_Xref xref ; 
-		public HPDF_Pages rootPages;
-		public HPDF_Pages curPages; 
-		public HPDF_Page curPage; 
+		public HPDF_Xref Xref ; 
+		public HPDF_Pages RootPages;
+		public HPDF_Pages CurPages; 
+		public HPDF_Page CurPage; 
 		
-		public HPDF_List pageList;
+		public HPDF_List PageList;
 		
-		public HPDF_Dict info; 
-		public HPDF_Dict trailer;
+		public HPDF_Dict Info; 
+		public HPDF_Dict Trailer;
 		
-		public HPDF_Catalog catalog;
+		public HPDF_Catalog Catalog;
 		
-		public double pagePerPages;
-		public int curPageNum;
+		public double PagePerPages;
+		public int CurPageNum;
 		
-		public HPDF_Stream stream;  
+		public HPDF_Stream Stream;  
 		
-		public HPDF_Encoder curEncoder; 	
-		public HPDF_List encoderList; 
+		public HPDF_Encoder CurEncoder; 	
+		public HPDF_List EncoderList; 
 		
 		
 		/*** FONTS **/
-		public HPDF_List fontdefList; 
-		public HPDF_List fontMgr; 
-		public string ttfontTag; 
+		public HPDF_List FontdefList; 
+		public HPDF_List FontMgr; 
+		public string TtfontTag; 
 			
-		public HPDF_Outline outlines; 
+		public HPDF_Outline Outlines; 
 		
 		/** Encrypt **/
-		public bool encryptOn; 
-		public HPDF_EncryptDict encryptDict;
+		public bool EncryptOn; 
+		public HPDF_EncryptDict EncryptDict;
 
-        // TODO body
         public HPDF_Doc(Func<string> userErrorFunc = null, object userData = null)
         {
             Trace.WriteLine("HPDF_Doc");
+
+            PdfVersion = (int)HPDF_PdfVer.HPDF_VER_13;
+            sigBytes = HPDF_SIG_BYTES;
+            CompressionMode = HPDF_Consts.HPDF_COMP_NONE;
+
+            HPDF_NewDoc();
         }
 
-        public void HPDF_NewDoc()
+        private void HPDF_NewDoc()
         {
             Trace.WriteLine("HPDF_NewDoc");
+
+            HPDF_FreeDoc();
+            Xref = new HPDF_Xref();
+            Trailer = Xref.Trailer;
+
+            FontMgr = new HPDF_List(HPDF_Conf.HPDF_DEF_ITEMS_PER_BLOCK);
+
+            if (FontdefList == null)
+                FontdefList = new HPDF_List(HPDF_Conf.HPDF_DEF_ITEMS_PER_BLOCK);
+         
+            if (EncoderList == null)
+                EncoderList = new HPDF_List(HPDF_Conf.HPDF_DEF_ITEMS_PER_BLOCK);
+         
+            Catalog = new HPDF_Catalog(Xref);
+
+           // RootPages = Catalog.HPDF_Catalog_GetRoot();
+
+            //PageList = new HPDF_List(HPDF_Conf.HPDF_DEF_PAGE_LIST_NUM);
+
+            //CurPages = RootPages;
+
+            //var ptr = "CSharpPdf library ";
+            //var version  = HPDF_GetVersion();
+
+            //ptr += version;
+
+            //HPDF_SetInfoAttr((int)HPDF_InfoType.HPDF_INFO_PRODUCER, ptr);
+
         }
 
         public void HPDF_FreeDoc()
         {
             Trace.WriteLine("HPDF_FreeDoc");
+
+            if (Xref!=null)
+            {
+                Xref.HPDF_Xref_Free();
+                Xref = null;
+            }
+
+            PdfVersion = (int)HPDF_PdfVer.HPDF_VER_13;
         }
 
         public void HPDF_SetPagesConfiguration()

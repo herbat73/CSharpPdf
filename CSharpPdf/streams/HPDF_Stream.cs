@@ -20,10 +20,11 @@ namespace CSharpPdf.Streams
     	public int type;
 
         public object attr;
+        public HPDF_Error Error;
 
         public HPDF_Stream()
         {
-                
+            LibLogger.Debug(this.GetType(), "ctor");
         }
 
         public void HPDF_Stream_WriteStr(string value)
@@ -42,7 +43,6 @@ namespace CSharpPdf.Streams
             LibLogger.Debug(this.GetType(), "HPDF_Obj_WriteValue");
 
             HPDF_Obj_Header header = obj.Header;
-		
             var clas = header.ObjClass & HPDF_Obj_Header.HPDF_OCLASS_ANY;
 
 		    switch (clas)
@@ -75,9 +75,8 @@ namespace CSharpPdf.Streams
 		            HPDF_Stream_WriteStr( "null");
 		            break;
 		        default:
-		        {
-		         	throw new HPDF_Error("HPDF_Obj_WriteValue", HPDF_Error.HPDF_ERR_UNKNOWN_CLASS, 0 );
-                }
+		         	Error = new HPDF_Error("HPDF_Obj_WriteValue", HPDF_Error.HPDF_ERR_UNKNOWN_CLASS, 0 );
+                    break;
             }
 		}
 

@@ -35,9 +35,6 @@ namespace CSharpPdf.Doc
 		public const int HPDF_VERSION_ID                = 20100;         
 		public const int HPDF_SIG_BYTES	                = 0x41504446;
 
-        ///private delegate _userErrorFunc(); // user error handler function
-        ///
-
         private readonly int sigBytes; 
 		public int PdfVersion; 
 		
@@ -64,7 +61,6 @@ namespace CSharpPdf.Doc
 		
 		public HPDF_Encoder CurEncoder; 	
 		public HPDF_List EncoderList; 
-		
 		
 		/*** FONTS **/
 		public HPDF_List FontdefList; 
@@ -106,7 +102,7 @@ namespace CSharpPdf.Doc
          
             Catalog = new HPDF_Catalog(Xref);
 
-           // RootPages = Catalog.HPDF_Catalog_GetRoot();
+            RootPages = Catalog.HPDF_Catalog_GetRoot();
 
             //PageList = new HPDF_List(HPDF_Conf.HPDF_DEF_PAGE_LIST_NUM);
 
@@ -124,6 +120,8 @@ namespace CSharpPdf.Doc
         public void HPDF_FreeDoc()
         {
             LibLogger.Debug(this.GetType(), "HPDF_FreeDoc");
+
+            Error = new HPDF_Error();
 
             if (Xref!=null)
             {

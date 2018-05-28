@@ -121,7 +121,7 @@ namespace CSharpPdf
 			string line  = "";  
 	
 		 //   if (ba==null)
-		 //       throw new HPDF_Error("ByteArrayReadLn", HPDF_Error.HPDF_INVALID_PARAMETER, 0);
+		 //       Error = new HPDF_Error("ByteArrayReadLn", HPDF_Error.HPDF_INVALID_PARAMETER, 0);
 		        
 			//while (thisByte != 	0x0A && thisByte != 0x0D && ba.Length > 0 )
 			//{

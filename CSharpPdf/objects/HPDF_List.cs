@@ -9,6 +9,7 @@ namespace CSharpPdf.Objects
         public uint blockSiz; 
       	public uint itemsPerBlock;
         public List<HPDF_Object> Obj;
+        public HPDF_Error Error;
 
         public HPDF_List(uint pItemsPerBlock)
         {
@@ -29,7 +30,7 @@ namespace CSharpPdf.Objects
             LibLogger.Debug(this.GetType(), " HPDF_List_Insert");
 			
 			if (targetIdx < 0)
-				throw new HPDF_Error("HPDF_List_Insert", HPDF_Error.HPDF_ITEM_NOT_FOUND, 0);
+				Error = new HPDF_Error("HPDF_List_Insert", HPDF_Error.HPDF_ITEM_NOT_FOUND, 0);
 			
 			/* move the item of the list to behind one by one. */
 			for (i = Obj.Count - 2; i >= targetIdx; i--)

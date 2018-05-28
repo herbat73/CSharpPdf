@@ -21,6 +21,8 @@ namespace CSharpPdf.Dict
 
         public HPDF_Dict()
         {
+            LibLogger.Debug(this.GetType(), "ctor");
+
             Header = new HPDF_Obj_Header
             {
                 ObjClass = HPDF_Obj_Header.HPDF_OCLASS_DICT
@@ -33,6 +35,8 @@ namespace CSharpPdf.Dict
 
         public HPDF_DictElement GetElement(string key)
         {
+            LibLogger.Debug(this.GetType(), $"GetElement key {key}");
+
             for (int i = 0 ; i < List.Count; i++ ) 
 			{
                 var el  = List[i];
@@ -44,19 +48,21 @@ namespace CSharpPdf.Dict
 
         public void HPDF_Dict_Add(string key, HPDF_Object obj)
         {
+            LibLogger.Debug(this.GetType(), $"HPDF_Dict_Add key {key} obj.Header.ObjId {obj.Header.ObjId}");
+
             HPDF_Obj_Header header = obj.Header;
             HPDF_DictElement element;
 
             if ((header.ObjId & HPDF_Obj_Header.HPDF_OTYPE_DIRECT) != 0)
-                throw new HPDF_Error("HPDF_Dict_Add line - invalid object", HPDF_Error.HPDF_INVALID_OBJECT, 0);
+                Error = new HPDF_Error("HPDF_Dict_Add line - invalid object", HPDF_Error.HPDF_INVALID_OBJECT, 0);
 
             if (key == null)
-                throw new HPDF_Error("HPDF_Dict_Add line - invalid object", HPDF_Error.HPDF_INVALID_OBJECT, 0);
+                Error = new HPDF_Error("HPDF_Dict_Add line - invalid object", HPDF_Error.HPDF_INVALID_OBJECT, 0);
 
             if (List.Count >= HPDF_Consts.HPDF_LIMIT_MAX_DICT_ELEMENT)
             {
                 LibLogger.Debug(this.GetType(), " HPDF_Dict_Add exceed limitatin of dict count(" + HPDF_Consts.HPDF_LIMIT_MAX_DICT_ELEMENT.ToString() + ")");
-                throw new HPDF_Error("HPDF_Dict_Add line - invalid object", HPDF_Error.HPDF_DICT_COUNT_ERR, 0);
+                Error = new HPDF_Error("HPDF_Dict_Add line - invalid object", HPDF_Error.HPDF_DICT_COUNT_ERR, 0);
             }
 
             /* check whether there is an object which has same name */
@@ -104,18 +110,17 @@ namespace CSharpPdf.Dict
 
         public HPDF_Object HPDF_Dict_GetItem(string key, uint objClass)
         {
+            LibLogger.Debug(this.GetType(), $"HPDF_Dict_GetItem key {key} objClass {objClass}");
+
             var element = GetElement(key);
             HPDF_Object obj = new HPDF_Object();
 
-            if (element!=null && key == element.Key)
+            if (element!=null && key==element.Key)
             {
-                //C HPDF_Obj_Header *header = (HPDF_Obj_Header *)element->value;
                 var header = element.Value.Header;
 
-                //if (header->obj_class == HPDF_OCLASS_PROXY) {
                 if (header.ObjClass == HPDF_Obj_Header.HPDF_OCLASS_PROXY)
                 {
-                    // C HPDF_Proxy p = element->value;
                     HPDF_Proxy p = new HPDF_Proxy(element.Value);
                     header = p.Header;
                     obj = p.Obj;
@@ -125,8 +130,7 @@ namespace CSharpPdf.Dict
 
                 if ((Header.ObjClass & HPDF_Obj_Header.HPDF_OCLASS_ANY) != objClass)
                 {
-                    LibLogger.Debug(this.GetType(), " HPDF_Dict_GetItem dict=%p key=%s obj_class=0x%08X\n");
-                    throw new HPDF_Error("HPDF_Dict_GetItem", HPDF_Error.HPDF_DICT_ITEM_UNEXPECTED_TYPE, 0);
+                    Error = new HPDF_Error("HPDF_Dict_GetItem", HPDF_Error.HPDF_DICT_ITEM_UNEXPECTED_TYPE, 0);
                 }
             }
 

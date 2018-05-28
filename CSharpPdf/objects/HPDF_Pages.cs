@@ -21,7 +21,6 @@ namespace CSharpPdf.Objects
 
             if (parent!=null)
                 parent.HPDF_Pages_AddKids(this);
-
         }
         
         public void HPDF_Pages_AddKids(HPDF_Dict kid)
@@ -33,7 +32,7 @@ namespace CSharpPdf.Objects
 
             if (kid.HPDF_Dict_GetItem("Parent", HPDF_Obj_Header.HPDF_OCLASS_DICT)==null)
             {
-                throw new HPDF_Error("HPDF_Pages_AddKids", HPDF_Error.HPDF_PAGE_CANNOT_SET_PARENT, 0);
+                Error = new HPDF_Error("HPDF_Pages_AddKids", HPDF_Error.HPDF_PAGE_CANNOT_SET_PARENT, 0);
             }
 
             kid.HPDF_Dict_Add("Parent", this);
@@ -43,7 +42,7 @@ namespace CSharpPdf.Objects
 
             if (kids==null)
             {
-                throw new HPDF_Error("HPDF_Pages_AddKids", HPDF_Error.HPDF_PAGES_MISSING_KIDS_ENTRY, 0);
+                Error = new HPDF_Error("HPDF_Pages_AddKids", HPDF_Error.HPDF_PAGES_MISSING_KIDS_ENTRY, 0);
             }
 
             if (kid.Header.ObjClass == (HPDF_Obj_Header.HPDF_OCLASS_DICT | HPDF_Obj_Header.HPDF_OSUBCLASS_PAGE))

@@ -27,10 +27,11 @@ namespace CSharpPdf.Catalog
 		{	
             var pages = HPDF_Dict_GetItem( "Pages", HPDF_Obj_Header.HPDF_OCLASS_DICT);
 
-		    if (pages==null || pages.Header.ObjClass != (HPDF_Obj_Header.HPDF_OSUBCLASS_PAGES |   HPDF_Obj_Header.HPDF_OCLASS_DICT))
+		    if (pages==null || pages.Header.ObjClass != (HPDF_Obj_Header.HPDF_OSUBCLASS_PAGES |  HPDF_Obj_Header.HPDF_OCLASS_DICT))
 		    {
-		        throw new HPDF_Error( "HPDF_Catalog_GetRoot", HPDF_Error.HPDF_PAGE_CANNOT_GET_ROOT_PAGES, 0);
+		       Error = new HPDF_Error( "HPDF_Catalog_GetRoot", HPDF_Error.HPDF_PAGE_CANNOT_GET_ROOT_PAGES, 0);
             }
+
 		    return pages as HPDF_Pages; 
 		}
 

@@ -22,7 +22,7 @@ namespace CSharpPdf.Xref
 
         public HPDF_Xref(int offset = 0)
         {
-            LibLogger.Debug(this.GetType(), " HPDF_Xref_New\n");
+            LibLogger.Debug(this.GetType(), $"HPDF_Xref offset {offset}");
 
             HPDF_Xref_Entry newEntry;    
     
@@ -93,7 +93,7 @@ namespace CSharpPdf.Xref
 
             if (obj==null)
             {
-                throw new HPDF_Error("HPDF_Xref_Add", HPDF_Error.HPDF_INVALID_OBJECT, 0);
+                Error = new HPDF_Error("HPDF_Xref_Add", HPDF_Error.HPDF_INVALID_OBJECT, 0);
             }
 
             var header = obj.Header;
@@ -101,12 +101,12 @@ namespace CSharpPdf.Xref
             if ((header.ObjId & HPDF_Obj_Header.HPDF_OTYPE_DIRECT)!=0 ||
                 (header.ObjId & HPDF_Obj_Header.HPDF_OTYPE_INDIRECT)!=0)
             {
-                throw new HPDF_Error("HPDF_Xref_Add", HPDF_Error.HPDF_INVALID_OBJECT, 0);
+                Error = new HPDF_Error("HPDF_Xref_Add", HPDF_Error.HPDF_INVALID_OBJECT, 0);
             }
 
             if (Entries.Count >= HPDF_Consts.HPDF_LIMIT_MAX_XREF_ELEMENT)
             {
-                throw new HPDF_Error("HPDF_Xref_Add", HPDF_Error.HPDF_XREF_COUNT_ERR, 0);
+                Error = new HPDF_Error("HPDF_Xref_Add", HPDF_Error.HPDF_XREF_COUNT_ERR, 0);
             }
 
             var entry = new HPDF_Xref_Entry
@@ -125,7 +125,8 @@ namespace CSharpPdf.Xref
 
         private HPDF_Xref_Entry HPDF_Xref_GetEntry(int index) 
 		{
-			return Entries[index];
+            LibLogger.Debug(this.GetType(), $"HPDF_Xref_GetEntry index {index}");
+            return Entries[index];
 		}
 
         public HPDF_Xref_Entry HPDF_Xref_GetEntryByObjectId(uint objId)
@@ -140,7 +141,7 @@ namespace CSharpPdf.Xref
 
                 if (tmpXref.Entries.Count + tmpXref.StartOffset > objId)
                 {
-                    throw new HPDF_Error("HPDF_Xref_GetEntryByObjectId", HPDF_Error.HPDF_INVALID_OBJ_ID, 0);
+                    Error = new HPDF_Error("HPDF_Xref_GetEntryByObjectId", HPDF_Error.HPDF_INVALID_OBJ_ID, 0);
                 }
 
                 if (tmpXref.StartOffset < objId)
@@ -163,7 +164,8 @@ namespace CSharpPdf.Xref
 
         private void WriteTrailer(HPDF_Stream stream)  
 	    {
-            LibLogger.Debug(this.GetType(), " WriteTrailer");
+            LibLogger.Debug(this.GetType(), "WriteTrailer");
+
             int maxObjId =	(int)Entries.Count + StartOffset;
  
             Trailer.HPDF_Dict_AddNumber("Size", maxObjId) ;
@@ -183,7 +185,7 @@ namespace CSharpPdf.Xref
 	        stream.HPDF_Stream_WriteUInt((uint)Addr);
 	        	
 	        stream.HPDF_Stream_WriteStr(HPDF_Utils.ParseString("\\012%%EOF\\012"));
-		
+
 	    }
     }
 }

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using CSharpPdf.Logger;
 
 namespace CSharpPdf.Error
 {
-    public class HPDF_Error : Exception
+    public class HPDF_Error
     {
         public const int HPDF_OK = 0;
         public const int HPDF_ARRAY_COUNT_ERR = 0x1001;
@@ -126,37 +126,42 @@ namespace CSharpPdf.Error
 
         public int ErrorNo;
         public int DetailNo;
-
-        public object UserData;
+        public string Message;
 
         public HPDF_Error()
         {
+            LibLogger.Debug(this.GetType(), "ctor");
+
+            Message = "";
             ErrorNo = 0;
             DetailNo = 0;
         }
-
-        public HPDF_Error(string message = "", int id = 0, int detailNo = 0) : base("Processing error.", new Exception(message))
+        
+        public HPDF_Error(string message = "", int id = 0, int detailNo = 0)
         {
+            LibLogger.Error(this.GetType(), $"HPDF_Error message {message} id {id} detailNo {detailNo}");
+
+            Message = "";
             ErrorNo = id;
             DetailNo = detailNo;
         }
 
-        public void HPDF_Error_Init(object userData)
-        {
-            UserData = userData;
-        }
-
         public void HPDF_Error_Reset()
         {
+            LibLogger.Debug(this.GetType(), "HPDF_Error_Reset");
+
+            Message = "";
             ErrorNo = 0;
             DetailNo = 0;
         }
 
-
-        public int HPDF_SetError(int errorNo, int detailNo)
+        public int HPDF_SetError(int errorNo, int detailNo, string message = "")
         {
+            LibLogger.Debug(this.GetType(), $"HPDF_SetError errorNo {errorNo} detailNo {detailNo} message {message}");
+
             ErrorNo = 0;
             DetailNo = 0;
+            Message = message;
 
             return ErrorNo;
         }
